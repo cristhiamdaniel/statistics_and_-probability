@@ -1,7 +1,20 @@
 ---
-title: "R Notebook"
+title: "Chapter 1"
 output: html_notebook
 ---
+
+# Generalidades y estadística descriptiva 
+
+## Poblaciones, muestras y procesos
+
+- Una investigación se centra en una colección bien definida de objetos que constituyen una **población** de interés. <br>
+
+- Cuando la información deseada está disponible para todos los objetos de la población, se tiene lo que se conoce como **censo**. <br>
+
+- Cuando existen restricciones provocando que un censo sea poco factible, entonces se selecciona un subconjunto de la población denominada **muestra**. <br>
+
+- Una **variable** es cualquier característica cuyo valor puede cambiar de un objeto a otro en la población. <br>
+
 
 This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
 
@@ -16,3 +29,23 @@ Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by press
 When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
+
+En el artículo "Bolted Connection Design Values Based on European Yield Model" se publican los valores de gravedad específica de varios tipos de madera que se utilizan en la construcción:
+
+
+```{r}
+Specific_grav <- c(0.31,  0.35,  0.36,  0.36,  0.37,  0.38,  0.40,  0.40,  0.40,
+                   0.41,  0.41,  0.42,  0.42,  0.42,  0.42,  0.42,  0.43,  0.44,
+                   0.45,  0.46,  0.46,  0.47,  0.48,  0.48,  0.48,  0.51,  0.54,
+                   0.54,  0.55,  0.58,  0.62,  0.66,  0.66,  0.67,  0.68,  0.75)
+Specific_grav
+```
+Construya una gráfca de tallos y hojas con tallos repetidos y comente sobre cualquier característica interesante de la gráfica.
+
+```{r}
+stem(Specific_grav,            # Vector numérico
+     scale = 1,    # Altura del gráfico
+     width = 80,   # Ancho del gráfico
+     atom = 1e-01) # Parámetro de tolerancia
+```
+
